@@ -1,0 +1,48 @@
+@import '../../style/options/colors.sass'
+  
+.basket-item
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  gap: 15px
+  padding: 50px 0
+  border-top: 1px dashed rgba(63, 78, 101, 0.3)
+  
+  &__image
+    width: 280px
+    height: 190px
+    text-align: center
+    img
+      max-width: 100%
+      max-height: 100%
+  i
+    width: 0px
+    height: 49px
+    opacity: 0.2
+    border: 1px dashed $colorTextGray
+
+  &__text
+    flex: 0 1 600px
+    font-weight: 300
+    font-size: 12px
+    line-height: 1.5
+    color: $colorTextGray
+  
+  &__title
+    font-weight: 700
+    font-size: 30px
+    line-height: 1.2
+    color: $colorText
+    margin: 10px 0
+
+  &__price
+    font-weight: 700
+    font-size: 30px
+    color: $colorText
+
+.delete
+  gap: 0
+  width: 59px
+  height: 59px
+  padding: 0

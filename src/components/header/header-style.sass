@@ -1,0 +1,138 @@
+@import '../../style/options/colors'
+
+a
+  color: inherit
+
+.menu
+  padding: 15px 0
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  &__contact
+    display: flex
+    gap: 20px
+
+  &__location,
+  &__email
+    font-size: 14px
+    font-weight: 600
+    line-height: 1.5
+    color: $colorText
+    padding-left: 35px
+    display: flex
+    flex-direction: column
+    background-position: left center
+    background-repeat: no-repeat
+    span
+      font-weight: 400
+      font-size: 14px
+      color: $colorTextGray
+  &__location
+    background-image: url('../../img/header/location.svg')
+  &__email
+    background-image: url('../../img/header/email.svg')
+  &__border
+    opacity: 0.05
+    border: 1px dashed #000000
+
+  &__list
+    display: flex
+    gap: 30px
+    color: $colorTextGray
+    font-size: 14px
+    line-height: 21px
+    
+.header
+  &__row
+    padding: 20px 0
+    border-top: 1px solid rgba(63, 78, 101, .2)
+    border-bottom: 1px solid rgba(63, 78, 101, .2)
+  &__flex
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__logo
+    svg
+      fill: $colorTextGray
+  &__catalog,
+  &__price
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 10px 19px
+    gap: 12px
+    background: $colorAccent
+    border-radius: 79px
+    color: #fff
+    font-weight: 700
+    font-size: 14px
+    line-height: 17px
+  &__search
+    width: 263px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px 10px 10px 20px
+    gap: 10px
+    background: #EDEDED
+    border-radius: 36px
+  &__call
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 10px
+  &__call-text
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    font-weight: 300
+    font-size: 12px
+    color: $colorTextGray
+  &__call-phone
+    font-weight: 600
+    font-size: 14px
+    line-height: 21px
+    color: $colorText
+  &__order-call
+    text-decoration: underline
+
+.basket
+  display: flex
+  gap: 25px
+  align-items: center
+  cursor: pointer
+  &__img
+    width: 50px
+    height: 46px
+    position: relative
+    font-size: 46px
+    color: $colorTextGray
+    fill: $colorTextGray
+
+  &__count
+    position: absolute
+    top: 0
+    right: -10px
+    min-width: 22px
+    min-height: 22px
+    padding: 0 3px
+    border-radius: 50%
+    text-align: center
+    background: #FFC85E
+    border: 3px solid #FFFFFF
+    font-weight: 700
+    font-size: 14px
+    line-height: 17px
+    color: #FFFFFF
+  &__price
+    display: flex
+    flex-direction: column
+    gap: 8px
+    font-weight: 300
+    font-size: 12px
+    color: $colorTextGray
+    span
+      font-weight: 600
+      font-size: 14px
+      color: $colorText

@@ -1,0 +1,20 @@
+@import '../../style/options/mixin'
+@import '../../style/options/colors'
+  
+.admin
+  &__title
+    @include h2-title()
+    margin-bottom: 50px
+
+  button
+    padding: 10px 15px
+    border-radius: 15px
+    color: #fff
+    background-color: $colorTextGray
+    margin-bottom: 20px
+  
+  &__wrapper
+    color: $colorTextGray
+    display: flex
+    justify-content: space-between
+

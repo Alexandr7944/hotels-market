@@ -1,0 +1,129 @@
+@import './options/colors'
+  
+.footer
+  background-color: $colorTextGray
+  padding: 70px 0 115px
+  color: $bgColor
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+  &__about
+    max-width: 320px
+    font-size: 16px
+    line-height: 1.5
+    span
+      text-align: right
+      font-size: 12px
+    svg
+      fill: $bgColor
+      margin-bottom: 15px
+    p
+      margin-bottom: 45px
+  &__email
+    span
+      display: block
+      text-align: left
+      margin-bottom: 15px
+  &__form
+    width: 100%
+    max-width: 282px
+    border-radius: 36px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px 10px 10px 20px
+    gap: 10px
+    background: $bgColor
+    input
+      background-color: transparent
+      font-size: 12px
+      height: 38px
+    button
+      width: 39px
+      height: 39px
+      border-radius: 50%
+      background: url('../img/footer/next-btn.svg') center no-repeat
+      background-color: $colorAccent
+  &__title
+    font-weight: 600
+    font-size: 20px
+    line-height: 1.5
+    margin-bottom: 25px
+  &__item
+    font-size: 14px
+    line-height: 1.5
+    margin-bottom: 20px
+
+  &__price
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 10px 19px
+    gap: 12px
+    background: $colorAccent
+    border-radius: 79px
+    color: #fff
+    font-weight: 700
+    font-size: 14px
+    line-height: 17px
+    .header__link:after
+      content: ''
+      display: block
+      width: 17px
+      height: 17px
+      background: url('../img/footer/price.svg') no-repeat
+      background-size: contain
+  .my-btn
+    margin-bottom: 20px
+  &__social-media-title
+    display: block
+    margin-bottom: 15px 
+  &__social-media-list
+    display: flex
+    gap: 10px
+  &__social-media-link
+    display: block
+    width: 39px
+    height: 39px
+    background-size: contain
+  .whatsapp
+    background: url('../img/footer/whatsapp.png') center no-repeat
+  .telegram
+    background: url('../img/footer/telegram.png') center no-repeat
+  
+  &__call-text
+    display: flex
+    flex-direction: column
+    gap: 8px
+    font-weight: 300
+    font-size: 12px
+    margin: 25px 0 25px
+  &__call-phone
+    font-weight: 600
+    font-size: 14px
+    line-height: 21px
+  &__order-call
+    text-decoration: underline
+  &__email
+    font-size: 14px
+    font-weight: 600
+    line-height: 1.5
+    display: flex
+    flex-direction: column
+    span
+      font-weight: 400
+      font-size: 14px
+  
+  &__cards-list
+    display: flex
+    gap: 5px
+  &__cards-link
+    display: block
+    width: 61px
+    height: 39px
+    background-size: contain
+  .visa
+    background: url('../img/footer/visa.png') center no-repeat
+  .master-card
+    background: url('../img/footer/master-card.png') center no-repeat

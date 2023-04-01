@@ -1,0 +1,31 @@
+@import '../../style/options/colors.sass'
+  
+.pagination
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 3px
+  margin-bottom: 70px
+  &__btn-arrow,
+  &__btn
+    width: 35px
+    height: 35px
+    background: transparent
+    border-radius: 50%
+    font-weight: 500
+    font-size: 14px
+    line-height: 1,3
+    text-align: center
+    color: $colorTextGray
+  &__btn_active
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%)
+  &__btn-arrow
+    font-weight: 700
+    color: $colorAccent
+    &:first-child
+      margin-right: 35px
+    &:last-child
+      margin-left: 35px
+  &__btn-arrow:hover,
+  &__btn:hover
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%)

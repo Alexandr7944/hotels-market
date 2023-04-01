@@ -1,0 +1,21 @@
+@import '../../style/options/colors'
+
+.navbar
+  &__list
+    padding: 45px 0
+    display: flex
+    gap: 10px
+    font-weight: 300
+    font-size: 14px
+    line-height: 1.2
+    color: $colorTextGray
+  &__item
+    cursor: pointer
+    padding-right: 10px
+    border-right: 1px dashed $colorTextGray
+    &:last-child
+      opacity: .5
+      padding-right: 0
+      border-right: none
+      &:hover
+        opacity: 1
