@@ -3,28 +3,19 @@ import { IProduct } from "../../interfase/IProduct";
 import { useState } from 'react';
 import { useAppDispatch } from "../../hooks/hook";
 import { addProduct } from "../../store/listOfProductsSlice";
-import Select from 'react-select/dist/declarations/src/Select';
-import { category } from '../../data/categoriesList';
+import Select from 'react-select';
+import { category, subCategory } from '../../data/categoriesList';
+import { defaultProduct } from '../../data/defaultProduct';
 
 const AdminNewItem = () => {
-  const [item, setItem] = useState<IProduct>({
-    id: 0,
-    producer: "",
-    brend: "",
-    title: "",
-    type: [""],
-    packing: "",
-    image: "no-image.ipg",
-    barcode: "",
-    price: 0,
-    description: ""
-  });
+  const [item, setItem] = useState<IProduct>(defaultProduct);
   const dispatch = useAppDispatch();
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!item) return;
     dispatch(addProduct(item));
+    setItem(defaultProduct);
   }
 
   return (
@@ -47,7 +38,6 @@ const AdminNewItem = () => {
           type="text"
           value={item.brend}
           onChange={e => setItem({...item, brend: e.target.value})}
-          required
         />
       </label>
       <label>
@@ -56,25 +46,26 @@ const AdminNewItem = () => {
           type="text"
           value={item.title}
           onChange={e => setItem({...item, title: e.target.value})}
-          required
         />
       </label>
       <label>
         <span>Тип: </span>
-        <input
-          type="text"
-          value={item.type.join(', ')}
-          onChange={e => setItem({...item, type: e.target.value.split(', ')})}
-          required
+        <Select
+          className='admin-select'
+          classNamePrefix='admin-options'
+          isMulti
+          options={category}
+          onChange={e => setItem({...item, type: e.map(item => item.value)})}
         />
        </label>
       <label>
         <span>Подтип: </span>
-        {/* <Select options={category}/> */}
-        <input
-          type="text"
-          value={item.subtype?.join(', ')}
-          onChange={e => setItem({...item, subtype: e.target.value.split(', ')})}
+        <Select
+          className='admin-select'
+          classNamePrefix='admin-options'
+          isMulti
+          options={subCategory}
+          onChange={e => setItem({...item, subtype: e.map(item => item.value)})}
         />
        </label>
       <label>
@@ -83,7 +74,6 @@ const AdminNewItem = () => {
           type="text"
           value={item.packing}
           onChange={e => setItem({...item, packing: e.target.value})}
-          required
         />
       </label>
       <label>
@@ -100,7 +90,6 @@ const AdminNewItem = () => {
           type="text"
           value={item.barcode}
           onChange={e => setItem({...item, barcode: e.target.value})}
-          required
         />
       </label>
       <label>
@@ -112,7 +101,6 @@ const AdminNewItem = () => {
             if (!+e.target.value) return;
             setItem({...item, price: +e.target.value})
           }}
-          required
         />
       </label>
       <label>
@@ -120,7 +108,6 @@ const AdminNewItem = () => {
         <textarea
           onChange={e => setItem({...item, description: e.target.value})}
           defaultValue={item.description}
-          required
         >
         </textarea>
       </label>

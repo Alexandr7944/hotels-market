@@ -6,10 +6,16 @@ import { useState } from 'react';
 import AdminChangeItem from '../../components/adminChangeItem/AdminChangeItem';
 import AdminNewItem from '../../components/adminNewItem/AdminNewItem';
 import Navbar from '../../components/navbar/Navbar';
+import { removeStorage } from '../../store/updataStorage';
 
 const Admin = () => {
   const products: IProduct[] = useAppSelector(state => state.listOfProducts.list);
   const [selectedItem, setSelectedItem] = useState<IProduct | undefined>();
+  const removeMemory = () => {
+    removeStorage('listProducts');
+    window.location.reload();
+  };
+
   const navArr = [
     {title: 'Главная', to: '../hotel-market/home'},
     {title: 'Администратор'}
@@ -21,6 +27,11 @@ const Admin = () => {
         <Navbar link={navArr} />
         <h2 className="admin__title">Администратор</h2>
         <button
+          className='admin__btn'
+          onClick={removeMemory}
+        >Сброс памяти</button>
+        <button
+          className='admin__btn'
           onClick={() => setSelectedItem(undefined)}
         >Новый элемент</button>
         <div className="admin__wrapper">

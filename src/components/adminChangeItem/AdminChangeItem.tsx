@@ -3,6 +3,10 @@ import { useState, useEffect } from 'react';
 import './adminChangeItem-style.sass'
 import { useAppDispatch } from "../../hooks/hook";
 import { changeProduct, removeProduct } from "../../store/listOfProductsSlice";
+import { defaultProduct } from "../../data/defaultProduct";
+import Select from "react-select";
+import { category } from "../../data/categoriesList";
+import { SelectType } from "../../interfase/ICategoriesList";
 
 type AdminChangeItemProps = {
   product: IProduct;
@@ -16,7 +20,17 @@ const AdminChangeItem: React.FC<AdminChangeItemProps> = ({ product }) => {
   const submit = (e: React.FormEvent) => {
     e.preventDefault(); 
     dispatch(changeProduct(item));
+    setItem(defaultProduct);
   }
+
+  const searchOption = () => {
+    const defOptions: Array<SelectType> | undefined = [];
+    category?.forEach((item) => {
+      if (product.type.includes(item.value)) defOptions.push(item);
+    })
+    return defOptions;
+  }
+  
 
   return (
     <form
@@ -56,12 +70,21 @@ const AdminChangeItem: React.FC<AdminChangeItemProps> = ({ product }) => {
         />
       </label>
       <label>
-        <span>Тип: </span>
-        <input
+        <span>Тип ухода: </span>
+        <Select
+          className='admin-select'
+          classNamePrefix='admin-options'
+          isMulti
+          id="selectType"
+          options={category}
+          value={searchOption()}
+          onChange={e => setItem({...item, subtype: e.map(item => item.value)})}
+        />
+        {/* <input
           type="text"
           value={item.type.join(', ')}
           onChange={e => setItem({...item, type: e.target.value.split(', ')})}
-        />
+        /> */}
        </label>
       <label>
         <span>Подтип: </span>
@@ -110,7 +133,7 @@ const AdminChangeItem: React.FC<AdminChangeItemProps> = ({ product }) => {
         <span>Описание: </span>
         <textarea
           onChange={e => setItem({...item, description: e.target.value})}
-          defaultValue={item.description}
+          value={item.description}
         >
         </textarea>
       </label>

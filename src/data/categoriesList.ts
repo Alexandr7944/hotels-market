@@ -148,3 +148,14 @@ categoriesList.forEach((item) => {
     label: item.key
   })
 });
+
+export const subCategory: Array<SelectType> | undefined = [];
+
+categoriesList.forEach((item) => {
+  item.subtype && item.subtype.forEach(subItem =>{
+    subCategory.push({
+      value: subItem.subtype,
+      label: subItem.subtypeKey
+    })
+  })
+});

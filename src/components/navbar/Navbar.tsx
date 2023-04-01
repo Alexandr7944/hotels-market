@@ -17,7 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ link }) => {
         <ul className="navbar__list">
           {
             link.map((el: LinkType) => 
-              <li className="navbar__item">
+              <li className="navbar__item" key={el.title}>
                 {
                   el.to
                     ? <Link to={el.to}>{el.title}</Link>
@@ -26,9 +26,6 @@ const Navbar: React.FC<NavbarProps> = ({ link }) => {
               </li>
             )
           }
-          {/* <li className="navbar__item">
-            <Link to='./hotel-market/catalog'>Косметика и гигиена</Link>
-          </li> */}
         </ul>
       </div>
     </nav>
