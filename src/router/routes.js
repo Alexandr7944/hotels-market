@@ -5,10 +5,10 @@ import Catalog from "../pages/Catalog";
 import ProductIdPage from "../pages/ProductIdPage";
 
 export const routes = [
-  { path: '/hotels-market/about', element: About },
-  { path: '/hotels-market/catalog', element: Catalog },
-  { path: '/hotels-market/catalog/:id', element: ProductIdPage },
-  { path: '/hotels-market/basket', element: Basket },
-  { path: '/hotels-market/admin', element: Admin },
+  { path: '/hotel-market/about', element: About },
+  { path: '/hotel-market/catalog', element: Catalog },
+  { path: '/hotel-market/catalog/:id', element: ProductIdPage },
+  { path: '/hotel-market/basket', element: Basket },
+  { path: '/hotel-market/admin', element: Admin },
 ]
 

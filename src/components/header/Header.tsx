@@ -74,7 +74,7 @@ const Header = () => {
             </Button>
             <div
               className="basket"
-              onClick={() => history('/basket', { replace: true })}
+              onClick={() => history('./hotel-market/basket', { replace: true })}
             >
               <div className="basket__img">
                 <BasketIcon />

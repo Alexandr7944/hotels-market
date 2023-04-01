@@ -7,10 +7,10 @@ const Navbar = () => {
       <div className="container">
         <ul className="navbar__list">
           <li className="navbar__item">
-            <Link to='./admin'>Админ</Link>
+            <Link to='./hotel-market/admin'>Админ</Link>
           </li>
           <li className="navbar__item">
-            <Link to='./catalog'>Косметика и гигиена</Link>
+            <Link to='./hotel-market/catalog'>Косметика и гигиена</Link>
           </li>
         </ul>
       </div>

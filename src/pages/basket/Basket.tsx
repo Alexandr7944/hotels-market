@@ -21,7 +21,7 @@ const Basket = () => {
     setModal(true);
     setTimeout(() => {
       dispatch(checkoutState());
-      history('/catalog', { replace: true });
+      history('../hotel-market/catalog', { replace: true });
     }, 1000);
   }
 
