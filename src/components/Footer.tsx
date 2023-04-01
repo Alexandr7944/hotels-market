@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Download } from "./Icons/Icons";
 import Logo from "./Icons/Logo";
 import Button from "./button/Button";

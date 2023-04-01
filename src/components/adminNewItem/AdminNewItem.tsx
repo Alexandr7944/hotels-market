@@ -14,7 +14,7 @@ const AdminNewItem = () => {
     title: "",
     type: [""],
     packing: "",
-    image: "",
+    image: "no-image.ipg",
     barcode: "",
     price: 0,
     description: ""

@@ -7,15 +7,22 @@ import useProductId from '../hooks/useProductId';
 import useOrderId from '../hooks/useOrderId';
 import CountProduct from '../components/countProduct/CountProduct';
 import ProductPacking from '../components/productPacking/ProductPacking';
+import Navbar from '../components/navbar/Navbar';
 
 const ProductIdPage: React.FC = () => {
   const product = useProductId();
   const dispatch = useAppDispatch();
   const order = useOrderId();
-  const [count, setCount] = useState(order ? order.count : 1);  
+  const [count, setCount] = useState(order ? order.count : 1);
+  const navArr = [
+    {title: 'Главная', to: '../hotel-market/home'},
+    {title: 'Каталог товаров', to: '../hotel-market/catalog'},
+    {title: `${product?.brend} ${product?.title}`},
+  ]
 
   return (
     <main className='product-page'>
+      <Navbar link={navArr} />
       {product && <div className="container">
         <div className="product-page__flex">
           <div className="product-page__image">

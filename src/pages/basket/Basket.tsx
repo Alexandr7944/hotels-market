@@ -6,6 +6,7 @@ import Button from '../../components/button/Button';
 import Modal from '../../components/modal/Modal';
 import { checkoutState } from '../../store/ordersProductSlice';
 import { useNavigate } from "react-router-dom";
+import Navbar from '../../components/navbar/Navbar';
 
 const Basket = () => {
   const orderProducts = useAppSelector(state => state.orderProducts.list);
@@ -14,6 +15,11 @@ const Basket = () => {
 
   const totalPraice = orderProducts.reduce((sum, product) => sum + product.price * product.count, 0);
   const [modal, setModal] = useState(false);
+  const navArr = [
+    {title: 'Главная', to: '../hotel-market/home'},
+    {title: 'Каталог товаров', to: '../hotel-market/catalog'},
+    {title: 'Корзина'},
+  ]
 
   const onClose = () => setModal(false);
 
@@ -28,6 +34,7 @@ const Basket = () => {
   return (
     <div className='basket-page'>
       <div className="container">
+        <Navbar link={navArr} />
         <h2 className="basket-page__title">Корзина</h2>
         {
           orderProducts.length > 0

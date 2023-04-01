@@ -5,6 +5,7 @@ import FilterSubtype from "./filterSubtype/FilterSubtype"
 import PriceSearch from "./PriceSearch"
 import Button from "./button/Button"
 import categoriesList from "../data/categoriesList"
+import Delete from "./Icons/Delete"
 
 interface IFormElement {
   from: HTMLInputElement,
@@ -77,7 +78,7 @@ const ParameterMatching: React.FC<ParameterMatchingProps> = ({ setTotalCount }) 
             className="parameter-matching__reset"
             type="reset"
           >
-            <img src={require("../img/main/delete.png")} alt="Удалить" />
+            <Delete />
           </button>
         </div>
       </form>

@@ -16,11 +16,11 @@ const ProductItem: React.FC<ProductItemProps> = ({product}) => {
 
   return (
     <div className="product__item">
-      <img className="product__img" src={`../../public/img/${product.image}`} alt="Продукт" />
+      <img className="product__img" src={require(`../../public/img/${product.image}`)} alt="Продукт" />
       <ProductPacking packing={product.packing}/>
       <h3
         className="product__title"
-        onClick={() => router(`/catalog/${product.id}`)}
+        onClick={() => router(`/hotel-market/catalog/${product.id}`)}
       >
         <span>{product.brend}</span> {product.title}
       </h3>
