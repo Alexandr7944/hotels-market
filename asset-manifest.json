@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/hotels-market/static/css/main.37c9a11c.css",
+    "main.js": "/hotels-market/static/js/main.8d09f63a.js",
+    "static/media/Rash.png": "/hotels-market/static/media/Rash.1b839cb083c4994289ec.png",
+    "static/media/soap.png": "/hotels-market/static/media/soap.4c9eebb3bb3154ce94b9.png",
+    "static/media/tanning_agent.png": "/hotels-market/static/media/tanning_agent.489c6e76f285d553dfae.png",
+    "static/media/depilation.png": "/hotels-market/static/media/depilation.eb38cbf0d9d94ef28c72.png",
+    "static/media/oral_hygiene.png": "/hotels-market/static/media/oral_hygiene.84d6854d19e6d7c6b81d.png",
+    "static/media/hand.png": "/hotels-market/static/media/hand.d990aa07cb48f1fda5cc.png",
+    "static/media/hair_care.png": "/hotels-market/static/media/hair_care.07c7cf54eb36625eaf1a.png",
+    "static/media/foot_care.png": "/hotels-market/static/media/foot_care.a3578a090dd23bd4ac15.png",
+    "static/media/ARAVIA.png": "/hotels-market/static/media/ARAVIA.accad6a1aead14b788ba.png",
+    "static/media/shaving.png": "/hotels-market/static/media/shaving.ae4fec3ef97002cb2edd.png",
+    "static/media/deodorants.png": "/hotels-market/static/media/deodorants.b149b76be0b040bfb044.png",
+    "static/media/bath1.jpg": "/hotels-market/static/media/bath1.f9d3faaa4ae4354979e7.jpg",
+    "static/media/Rocher.jpg": "/hotels-market/static/media/Rocher.a6316a52105c3160a9e2.jpg",
+    "static/media/Body0.webp": "/hotels-market/static/media/Body0.f8c89351b5fca9c95069.webp",
+    "static/media/image-bimax.png": "/hotels-market/static/media/image-bimax.c70b346efe2b90101fb0.png",
+    "static/media/image-ariel.png": "/hotels-market/static/media/image-ariel.45978a65091d86ef4894.png",
+    "static/media/image-aos.png": "/hotels-market/static/media/image-aos.88afc1f774d7fe539d14.png",
+    "static/media/email.svg": "/hotels-market/static/media/email.3340915fd443967adca6.svg",
+    "static/media/location.svg": "/hotels-market/static/media/location.d148b8d8689c3530f152.svg",
+    "index.html": "/hotels-market/index.html",
+    "static/media/price.svg": "/hotels-market/static/media/price.5e96ff0389bda2c46910.svg",
+    "static/media/next-btn.svg": "/hotels-market/static/media/next-btn.35ab94e2f8817f324bd3.svg",
+    "main.37c9a11c.css.map": "/hotels-market/static/css/main.37c9a11c.css.map",
+    "main.8d09f63a.js.map": "/hotels-market/static/js/main.8d09f63a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37c9a11c.css",
+    "static/js/main.8d09f63a.js"
+  ]
+}
