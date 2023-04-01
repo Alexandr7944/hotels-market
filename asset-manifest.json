@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hotels-market/static/css/main.37c9a11c.css",
-    "main.js": "/hotels-market/static/js/main.9933f7d9.js",
+    "main.js": "/hotels-market/static/js/main.de229b1b.js",
     "static/media/Rash.png": "/hotels-market/static/media/Rash.1b839cb083c4994289ec.png",
     "static/media/soap.png": "/hotels-market/static/media/soap.4c9eebb3bb3154ce94b9.png",
     "static/media/tanning_agent.png": "/hotels-market/static/media/tanning_agent.489c6e76f285d553dfae.png",
@@ -25,10 +25,10 @@
     "static/media/price.svg": "/hotels-market/static/media/price.5e96ff0389bda2c46910.svg",
     "static/media/next-btn.svg": "/hotels-market/static/media/next-btn.35ab94e2f8817f324bd3.svg",
     "main.37c9a11c.css.map": "/hotels-market/static/css/main.37c9a11c.css.map",
-    "main.9933f7d9.js.map": "/hotels-market/static/js/main.9933f7d9.js.map"
+    "main.de229b1b.js.map": "/hotels-market/static/js/main.de229b1b.js.map"
   },
   "entrypoints": [
     "static/css/main.37c9a11c.css",
-    "static/js/main.9933f7d9.js"
+    "static/js/main.de229b1b.js"
   ]
 }
