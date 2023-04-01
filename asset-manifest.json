@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hotels-market/static/css/main.37c9a11c.css",
-    "main.js": "/hotels-market/static/js/main.b1ab56e7.js",
+    "main.css": "/hotels-market/static/css/main.e6ed013a.css",
+    "main.js": "/hotels-market/static/js/main.4c0077b0.js",
     "static/media/Rash.png": "/hotels-market/static/media/Rash.1b839cb083c4994289ec.png",
     "static/media/soap.png": "/hotels-market/static/media/soap.4c9eebb3bb3154ce94b9.png",
     "static/media/tanning_agent.png": "/hotels-market/static/media/tanning_agent.489c6e76f285d553dfae.png",
@@ -19,16 +19,17 @@
     "static/media/image-bimax.png": "/hotels-market/static/media/image-bimax.c70b346efe2b90101fb0.png",
     "static/media/image-ariel.png": "/hotels-market/static/media/image-ariel.45978a65091d86ef4894.png",
     "static/media/image-aos.png": "/hotels-market/static/media/image-aos.88afc1f774d7fe539d14.png",
+    "static/media/no-image.jpg": "/hotels-market/static/media/no-image.c9064518b045c844a5a4.jpg",
     "static/media/email.svg": "/hotels-market/static/media/email.3340915fd443967adca6.svg",
     "static/media/location.svg": "/hotels-market/static/media/location.d148b8d8689c3530f152.svg",
     "index.html": "/hotels-market/index.html",
     "static/media/price.svg": "/hotels-market/static/media/price.5e96ff0389bda2c46910.svg",
     "static/media/next-btn.svg": "/hotels-market/static/media/next-btn.35ab94e2f8817f324bd3.svg",
-    "main.37c9a11c.css.map": "/hotels-market/static/css/main.37c9a11c.css.map",
-    "main.b1ab56e7.js.map": "/hotels-market/static/js/main.b1ab56e7.js.map"
+    "main.e6ed013a.css.map": "/hotels-market/static/css/main.e6ed013a.css.map",
+    "main.4c0077b0.js.map": "/hotels-market/static/js/main.4c0077b0.js.map"
   },
   "entrypoints": [
-    "static/css/main.37c9a11c.css",
-    "static/js/main.b1ab56e7.js"
+    "static/css/main.e6ed013a.css",
+    "static/js/main.4c0077b0.js"
   ]
 }
