@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './navbar-style.sass';
+import Arrow from '../Icons/Arrow';
 
 type LinkType = {
   title: string,
@@ -11,9 +12,22 @@ type NavbarProps = {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ link }) => {
+  const linkMobile = link[link.length - 2].to;
+  
+
   return (
     <nav className="navbar">
       <div className="container">
+          {
+            linkMobile &&
+            <div className="navbar__mobile">
+                <Link to={linkMobile} className="navbar__mobile-link">
+                  <Arrow />
+                </Link>
+                Назад
+            </div>
+          }
+        
         <ul className="navbar__list">
           {
             link.map((el: LinkType) => 

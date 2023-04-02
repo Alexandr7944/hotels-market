@@ -1,0 +1,52 @@
+@import '../../style/options/colors.sass'
+  
+.header-mobile
+  &__row
+    padding: 15px 15px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-bottom: 1px solid rgba(63, 78, 101, .1)
+  &__btn-menu
+    width: 32px
+    height: 32px
+    padding: 0
+    gap: 0
+    div
+      display: flex
+      flex-direction: column
+      gap: 2px
+    i
+      display: block
+      width: 8px
+      height: 2px
+      background-color: #fff
+
+  &__logo
+    height: 41px
+    fill: $colorTextGray
+
+  &__basket
+    svg
+      height: 30px
+  .basket__count
+    top: 5px
+    right: 0
+
+  &__btn
+    background-color: transparent
+    width: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 5px
+    color: $colorTextGray
+    font-weight: 600
+    font-size: 12px
+    svg
+      font-size: 16px
+
+@media ( min-width: 700px )
+  .header-mobile
+    display: none
+  

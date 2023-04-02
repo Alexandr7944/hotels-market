@@ -1,0 +1,78 @@
+@import '../../style/options/colors.sass'
+  
+.parameter-matching
+  &__form
+    max-width: 280px
+    margin-bottom: 20px
+
+  &__title-flex
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__btn-menu
+    width: 32px
+    height: 32px
+    background: #FFCA65
+    opacity: 0.5
+    border-radius: 100px
+    transition: .2s
+  &__btn-menu_open
+    transform: rotate(180deg)
+
+  &__title
+    font-weight: 500
+    font-size: 16px
+    line-height: 1.5
+    text-transform: uppercase
+    color: $colorText
+
+  .price-search
+    font-weight: 300
+    font-size: 14px
+    line-height: 1.5
+    color: $colorTextGray
+    span
+      font-weight: 500
+      color: $colorText
+    &__row
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin: 15px 0 30px
+      input
+        width: 100px
+        height: 23px
+        background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%)
+        border-radius: 1000px
+        text-align: center
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button
+          -webkit-appearance: none
+          margin: 0
+  &__buttons
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__reset
+    width: 59px
+    height: 59px
+    background: #FFC85E
+    border-radius: 79px
+  
+.parameter-matching__mobile
+  display: block
+.parameter-matching__mobile_hidden
+  display: none
+
+@media ( min-width: 800px )
+  .parameter-matching
+    flex: 0 0 240px
+    &__title
+      margin-bottom: 10px
+  .parameter-matching__mobile_hidden
+    display: block
+  .parameter-matching__btn-menu
+    display: none
+
+  

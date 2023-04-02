@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import InputSearch from './input-search/InputSearch';
-import { BrendType } from './ParameterMatching';
+import { BrendType } from './parameterMatching/ParameterMatching';
 
 type BrendSearchProps = {
   brends: Array<BrendType | undefined>,

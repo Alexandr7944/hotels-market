@@ -136,3 +136,51 @@ a
       font-weight: 600
       font-size: 14px
       color: $colorText
+
+.basket__fixed
+  position: fixed
+  bottom: 30px
+  right: 10px
+  padding: 15px
+  transform: scale(.8)
+    
+.header
+  .menu,
+  &__row
+    display: none
+
+@media ( min-width: 701px )
+
+  .header
+    .menu
+      display: flex
+      justify-content: center
+      &__contact
+        display: none
+    &__row
+      display: block
+    .input__search,
+    .header__call,
+    .basket__price
+      display: none
+
+@media ( min-width: 900px )
+  .header
+    .basket__price
+      display: flex
+
+@media ( min-width: 1200px )
+  .header
+    &__row
+      .input__search
+        display: flex
+    .menu
+      justify-content: space-between
+      &__contact
+        display: flex
+  
+@media ( min-width: 1300px )
+  .header
+    &__row
+      .input__call
+        display: flex

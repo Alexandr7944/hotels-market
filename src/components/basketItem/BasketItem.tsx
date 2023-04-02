@@ -31,7 +31,7 @@ const BasketItem: React.FC<BasketItemProps> = ({ order }) => {
         <h3 className="basket-item__title">{order.brend} {order.title}</h3>
         <p>{order.description}</p>
       </div>
-      <i></i>
+      <i className="basket-item__i_mobile"></i>
       <CountProduct
         count={count}
         setCount={setCount}

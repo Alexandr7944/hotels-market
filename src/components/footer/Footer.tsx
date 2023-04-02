@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Download } from "./Icons/Icons";
-import Logo from "./Icons/Logo";
-import Button from "./button/Button";
-import InputSearch from "./input-search/InputSearch";
+import './footer-style.sass';
+import { Download } from "../Icons/Icons";
+import Logo from "../Icons/Logo";
+import Button from "../button/Button";
+import InputSearch from "../input-search/InputSearch";
 
 const Footer = () => {
   return (
@@ -11,14 +12,20 @@ const Footer = () => {
       <div className="container">
         <div className="footer__wrapper">
           <div className="footer__row footer__about">
-            <Logo />
+            <div className="footer__flex-logo">
+              <Logo />
+              <Button className='footer__mobile-btn' text="Прайс-лист">
+                <Download className="price-icon"/>
+              </Button>
+            </div>
+            
             <p>Компания «Султан» — снабжаем розничные магазины товарами "под ключ" в Кокчетаве и Акмолинской области</p>
             <div className="footer__email">
               <span>Подпишись на скидки и акции</span>
               <InputSearch />
             </div>
           </div>
-          <div className="footer__row">
+          <div className="footer__row footer__menu">
             <h3 className="footer__title">Меню сайта:</h3>
             <ul className="footer__list">
               <li className="footer__item">
@@ -35,7 +42,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="footer__row">
+          <div className="footer__row footer__category">
             <h3 className="footer__title">Категории:</h3>
             <ul className="footer__list">
               <li className="footer__item">
@@ -55,9 +62,9 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="footer__row">
+          <div className="footer__row footer__price-row">
             <h3 className="footer__title">Скачать прайс-лист:</h3>
-            <Button text="Прайс-лист">
+            <Button className='footer__btn-price' text="Прайс-лист">
               <Download className="price-icon"/>
             </Button>
             <span className="footer__social-media-title">Связь в мессенджерах:</span>
@@ -70,7 +77,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="footer__row">
+          <div className="footer__row footer__contact">
             <h3 className="footer__title">Контакты:</h3>
             <div className="footer__call-text">
               <a className="footer__call-phone" href="tel:+77774900091">+7(777) 490-00-91</a>

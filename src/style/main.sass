@@ -7,103 +7,24 @@
   width: 100%
   display: flex
   justify-content: space-between
-  align-items: center
+  align-items: flex-start
+  gap: 15px
   margin-bottom: 25px
   h2
-    @include h2-title()
+    @include h2-title-mobile()
+  
 
-.sorted
-  font-weight: 500
-  font-size: 16px
-  line-height: 1.5
-  color: $colorText
-  display: flex
-  align-items: center
-  gap: 10px
-
-  &__select
-    width: 150px
-    font-weight: 400
-    color: $colorTextGray
-    .sorted__option__control
-      border: none
-
-.css-1hb7zxy-IndicatorsContainer
-  width: 1px
-  opacity: 0
-
-.categories__list
-  display: flex
-  justify-content: space-between
-  align-items: stretch
-  margin-bottom: 50px
-  .categories__item
-    padding: 10px
-    display: flex
-    justify-content: center
-    align-items: center
-    text-align: center
-    flex: 0 1 120px
-    width: 120px
-    height: 70px
-    background: $bgColor
-    box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04)
-    border-radius: 10px
-    cursor: pointer
-  .focus
-    box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.4)
+@media ( min-width: 800px )
+  .catalog-main__title
+    h2
+      @include h2-title()
+  
 
 .catalog-main__body
   display: flex
+  flex-direction: column
   gap: 8%
-
-  .parameter-matching
-    flex: 0 0 240px
-
-    &__form
-      margin-bottom: 20px
-
-    &__title
-      font-weight: 500
-      font-size: 16px
-      line-height: 1.5
-      text-transform: uppercase
-      color: $colorText
-      margin-bottom: 10px
-
-    .price-search
-      font-weight: 300
-      font-size: 14px
-      line-height: 1.5
-      color: $colorTextGray
-      span
-        font-weight: 500
-        color: $colorText
-      &__row
-        display: flex
-        justify-content: space-between
-        align-items: center
-        margin: 15px 0 30px
-        input
-          width: 100px
-          height: 23px
-          background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%)
-          border-radius: 1000px
-          text-align: center
-          &::-webkit-outer-spin-button,
-          &::-webkit-inner-spin-button
-            -webkit-appearance: none
-            margin: 0
-    &__buttons
-      display: flex
-      justify-content: space-between
-      align-items: center
-    &__reset
-      width: 59px
-      height: 59px
-      background: #FFC85E
-      border-radius: 79px
-          
+      
   .brend-search
     line-height: 1.5
     margin-bottom: 25px
@@ -126,3 +47,8 @@
       font-size: 12px
       color: $colorTextGray
       cursor: pointer
+
+@media ( min-width: 800px )
+  .catalog-main__body
+    flex-direction: row
+  

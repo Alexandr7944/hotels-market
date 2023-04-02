@@ -1,20 +1,26 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import './header-style.sass';
+import { useState } from 'react';
 import Button from "../button/Button";
 import { GridAlt, Download, BasketIcon } from "../Icons/Icons";
 import { useAppSelector } from "../../hooks/hook";
 import InputSearch from "../input-search/InputSearch";
 import Logo from "../Icons/Logo";
 import { useNavigate } from "react-router-dom";
+import HeaderMobile from '../header-mobile/HeaderMobile';
 
 const Header = () => {
   const order = useAppSelector(state => state.orderProducts.list);
   const count = order.reduce((sum, item) => sum + item.count, 0);
   const price = order.reduce((sum, item) => sum + item.price * item.count, 0);
   const history = useNavigate();
+  const [scroll, setScroll] = useState(0);
+  
+  document.onscroll = () => setScroll(window.scrollY);
 
   return (
     <header className="header">
+      <HeaderMobile count={count}/>
       <div className="container">
         <div className="menu">
           <div className="munu__row menu__contact">
@@ -88,6 +94,18 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {
+        scroll > 200 && count > 0 &&
+          <div
+            className="basket basket__fixed"
+            onClick={() => history('./hotel-market/basket', { replace: true })}
+          >
+            <div className="basket__img">
+              <BasketIcon />
+              {count > 0 && <span className="basket__count">{count}</span>}
+            </div>
+          </div>
+      }
     </header>
   )
 }

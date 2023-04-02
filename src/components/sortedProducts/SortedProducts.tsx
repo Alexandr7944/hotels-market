@@ -1,13 +1,18 @@
-import { useAppDispatch } from '../hooks/hook';
-import { sortList } from '../store/listOfProductsSlice';
+import './sortedProducts.sass';
+import { useAppDispatch } from '../../hooks/hook';
+import { sortList } from '../../store/listOfProductsSlice';
 import Select from 'react-select'
-import sortListArr from '../data/sortedList';
+import sortListArr from '../../data/sortedList';
 
-const SortedProducts = () => {
+type SortedProductsProps = {
+  classText?: string
+}
+
+const SortedProducts: React.FC<SortedProductsProps> = ({ classText }) => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="sorted">
+    <div className={classText ? `sorted ${classText}` : 'sorted'}>
       Сортировка:
       <Select
         className='sorted__select'

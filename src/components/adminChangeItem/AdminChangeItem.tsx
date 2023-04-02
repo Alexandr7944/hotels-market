@@ -4,8 +4,8 @@ import './adminChangeItem-style.sass'
 import { useAppDispatch } from "../../hooks/hook";
 import { changeProduct, removeProduct } from "../../store/listOfProductsSlice";
 import { defaultProduct } from "../../data/defaultProduct";
-import Select from "react-select";
-import { category } from "../../data/categoriesList";
+import Select, { MultiValue } from "react-select";
+import { category, subCategory } from "../../data/categoriesList";
 import { SelectType } from "../../interfase/ICategoriesList";
 
 type AdminChangeItemProps = {
@@ -17,20 +17,31 @@ const AdminChangeItem: React.FC<AdminChangeItemProps> = ({ product }) => {
   useEffect(() => setItem(product), [product])
   const dispatch = useAppDispatch();
 
+  const getValueType = () => {    
+    if (item.type.length === 0) return [];
+    return category?.filter(el => item.type.includes(el.value))   
+  }
+
+  const changeOptionsType = (e: MultiValue<SelectType>) => {
+    setItem({...item, type: e.map(item => item.value)})
+  }
+
+  const getValueSubtype = () => {    
+    if (item.subtype?.length === 0) return [];
+    return subCategory?.filter(el => item.subtype?.includes(el.value))   
+  }  
+
+  const changeOptionsSubtype = (e: MultiValue<SelectType>) => {
+    setItem({...item, subtype: e.map(item => item.value)})
+    console.log(item);
+    
+  }
+  
   const submit = (e: React.FormEvent) => {
     e.preventDefault(); 
     dispatch(changeProduct(item));
     setItem(defaultProduct);
-  }
-
-  const searchOption = () => {
-    const defOptions: Array<SelectType> | undefined = [];
-    category?.forEach((item) => {
-      if (product.type.includes(item.value)) defOptions.push(item);
-    })
-    return defOptions;
-  }
-  
+  } 
 
   return (
     <form
@@ -76,22 +87,21 @@ const AdminChangeItem: React.FC<AdminChangeItemProps> = ({ product }) => {
           classNamePrefix='admin-options'
           isMulti
           id="selectType"
+          value={getValueType()}
           options={category}
-          value={searchOption()}
-          onChange={e => setItem({...item, subtype: e.map(item => item.value)})}
+          onChange={changeOptionsType}
         />
-        {/* <input
-          type="text"
-          value={item.type.join(', ')}
-          onChange={e => setItem({...item, type: e.target.value.split(', ')})}
-        /> */}
-       </label>
+      </label>
       <label>
         <span>Подтип: </span>
-        <input
-          type="text"
-          value={item.subtype?.join(', ')}
-          onChange={e => setItem({...item, subtype: e.target.value.split(', ')})}
+        <Select
+          className='admin-select'
+          classNamePrefix='admin-options'
+          isMulti
+          id="selectSubtype"
+          value={getValueSubtype()}
+          options={subCategory}
+          onChange={changeOptionsSubtype}
         />
        </label>
       <label>

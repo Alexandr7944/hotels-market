@@ -1,6 +1,7 @@
-import categoriesList from "../data/categoriesList";
-import { useAppDispatch } from "../hooks/hook";
-import { filterList } from "../store/listOfProductsSlice";
+import './categories-style.sass';
+import categoriesList from "../../data/categoriesList";
+import { useAppDispatch } from "../../hooks/hook";
+import { filterList } from "../../store/listOfProductsSlice";
 
 const Categories = () => {
   const dispatch = useAppDispatch();

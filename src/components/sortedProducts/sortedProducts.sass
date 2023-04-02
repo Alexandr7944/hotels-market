@@ -1,0 +1,31 @@
+@import '../../style/options/colors'
+  
+.sorted
+  font-weight: 500
+  font-size: 16px
+  line-height: 1.5
+  color: $colorText
+  display: flex
+  align-items: center
+  gap: 10px
+  &__mobile
+    margin-bottom: 30px
+
+  &__select
+    width: 200px
+    font-weight: 400
+    color: $colorTextGray
+    div
+      border: none
+  &__option__indicators
+    display: none
+
+.sorted-desktop
+  display: none
+
+@media ( min-width: 800px )
+  .sorted-mobile
+    display: none
+  .sorted-desktop
+    display: flex
+  

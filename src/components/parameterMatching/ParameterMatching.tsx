@@ -1,11 +1,14 @@
-import { useAppDispatch, useAppSelector } from "../hooks/hook"
-import { filterParameterList } from "../store/listOfProductsSlice"
-import BrendSearch from "./BrendSearch"
-import FilterSubtype from "./filterSubtype/FilterSubtype"
-import PriceSearch from "./PriceSearch"
-import Button from "./button/Button"
-import categoriesList from "../data/categoriesList"
-import Delete from "./Icons/Delete"
+import './parameterMatching-style.sass';
+import { useAppDispatch, useAppSelector } from "../../hooks/hook"
+import { filterParameterList } from "../../store/listOfProductsSlice"
+import BrendSearch from "../BrendSearch"
+import FilterSubtype from "../filterSubtype/FilterSubtype"
+import PriceSearch from "../PriceSearch"
+import Button from "../button/Button"
+import categoriesList from "../../data/categoriesList"
+import Delete from "../Icons/Delete"
+import Arrow from "../Icons/Arrow"
+import { useState } from 'react';
 
 interface IFormElement {
   from: HTMLInputElement,
@@ -24,6 +27,7 @@ type ParameterMatchingProps = {
 const ParameterMatching: React.FC<ParameterMatchingProps> = ({ setTotalCount }) => {
   const listProducts = useAppSelector(state => state.listOfProducts.list);
   const dispatch = useAppDispatch();
+  const [mobileMenu, setMobileMenu] = useState(false);
   const brends: Array<undefined | BrendType> = [];
   
   listProducts.forEach(product => {
@@ -69,20 +73,37 @@ const ParameterMatching: React.FC<ParameterMatchingProps> = ({ setTotalCount }) 
         // onChange={handleEvent}
         onReset={reset}
       >
-        <h2 className="parameter-matching__title">Подбор по параметрам</h2>
-        <PriceSearch />
-        <BrendSearch brends={brends} />
-        <div className="parameter-matching__buttons">
-          <Button text="Показать"/>
+        <div className="parameter-matching__title-flex">
+          <h2 className="parameter-matching__title">Подбор по параметрам</h2>
           <button
-            className="parameter-matching__reset"
-            type="reset"
+            className={mobileMenu
+              ? "parameter-matching__btn-menu parameter-matching__btn-menu_open"
+              : "parameter-matching__btn-menu"}
+            onClick={() => setMobileMenu(prev => prev = !prev)}
           >
-            <Delete />
+            <Arrow />
           </button>
         </div>
+        <div className={mobileMenu
+          ? "parameter-matching__mobile"
+          : "parameter-matching__mobile_hidden"}>
+          <PriceSearch />
+          <BrendSearch brends={brends} />
+          <div className="parameter-matching__buttons">
+            <Button text="Показать"/>
+            <button
+              className="parameter-matching__reset"
+              type="reset"
+            >
+              <Delete />
+            </button>
+          </div>
+        </div>
+        
       </form>
-      {categoriesList.map((category) => <FilterSubtype key={category.type} category={category}/>)}
+      <div className="parameter-matching__mobile_hidden">
+        {categoriesList.map((category) => <FilterSubtype key={category.type} category={category}/>)}
+      </div>
     </aside>
   )
 }

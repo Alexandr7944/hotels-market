@@ -3,7 +3,7 @@ import Admin from "../pages/admin/Admin";
 import Basket from "../pages/basket/Basket";
 import Catalog from "../pages/Catalog";
 import HomePage from "../pages/homePage/HomePage";
-import ProductIdPage from "../pages/ProductIdPage";
+import ProductIdPage from "../pages/productIdPage/ProductIdPage";
 
 export const routes = [
   { path: '/hotel-market/about', element: About },

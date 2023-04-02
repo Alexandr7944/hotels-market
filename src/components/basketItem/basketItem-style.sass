@@ -1,44 +1,47 @@
 @import '../../style/options/colors.sass'
-  
+
 .basket-item
   width: 100%
   display: flex
+  flex-wrap: wrap
   justify-content: space-between
   align-items: center
   gap: 15px
   padding: 50px 0
   border-top: 1px dashed rgba(63, 78, 101, 0.3)
-  
+
   &__image
+    flex: 1 0 100%
+    text-align: center
+  &__image img
     width: 280px
     height: 190px
-    text-align: center
-    img
-      max-width: 100%
-      max-height: 100%
+    object-fit: contain
   i
     width: 0px
     height: 49px
     opacity: 0.2
     border: 1px dashed $colorTextGray
+  &__i_mobile
+    display: none
 
   &__text
-    flex: 0 1 600px
+    flex: 1 0 100%
     font-weight: 300
     font-size: 12px
     line-height: 1.5
     color: $colorTextGray
-  
+
   &__title
-    font-weight: 700
-    font-size: 30px
+    font-weight: 500
+    font-size: 20px
     line-height: 1.2
     color: $colorText
     margin: 10px 0
 
   &__price
     font-weight: 700
-    font-size: 30px
+    font-size: 16px
     color: $colorText
 
 .delete
@@ -46,3 +49,21 @@
   width: 59px
   height: 59px
   padding: 0
+
+@media ( min-width: 1000px )
+  .basket-item
+    flex-wrap: nowrap
+    &__image
+      flex: 0 0 200px
+    &__image img
+      width: 200px
+      height: 190px
+    &__title
+      font-weight: 700
+      font-size: 30px
+    &__text
+      flex: 1 1 320px
+    i
+      display: block
+    &__price
+      font-size: 30px

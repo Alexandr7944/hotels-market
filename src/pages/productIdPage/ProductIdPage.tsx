@@ -1,13 +1,14 @@
-import Button from '../components/button/Button';
-import { BasketIcon, Download, Share } from '../components/Icons/Icons';
-import { addOrder } from '../store/ordersProductSlice';
+import './product-page-style.sass';
+import Button from '../../components/button/Button';
+import { BasketIcon, Download, Share } from '../../components/Icons/Icons';
+import { addOrder } from '../../store/ordersProductSlice';
 import { useState } from 'react';
-import { useAppDispatch } from '../hooks/hook';
-import useProductId from '../hooks/useProductId';
-import useOrderId from '../hooks/useOrderId';
-import CountProduct from '../components/countProduct/CountProduct';
-import ProductPacking from '../components/productPacking/ProductPacking';
-import Navbar from '../components/navbar/Navbar';
+import { useAppDispatch } from '../../hooks/hook';
+import useProductId from '../../hooks/useProductId';
+import useOrderId from '../../hooks/useOrderId';
+import CountProduct from '../../components/countProduct/CountProduct';
+import ProductPacking from '../../components/productPacking/ProductPacking';
+import Navbar from '../../components/navbar/Navbar';
 
 const ProductIdPage: React.FC = () => {
   const product = useProductId();
@@ -26,29 +27,32 @@ const ProductIdPage: React.FC = () => {
       {product && <div className="container">
         <div className="product-page__flex">
           <div className="product-page__image">
-            <img src={require(`../../public/img/${product.image}`)} alt={product.title} />
+            <img src={require(`../../../public/img/${product.image}`)} alt={product.title} />
           </div>
           <div className="product-page__content">
             <span className="product-page__available">В наличии</span>
             <h3 className="product-page__title">
               <span>{product.brend}</span> {product.title}
             </h3>
-            <ProductPacking packing={product.packing} />
+            <ProductPacking className="product-page__packing" packing={product.packing} />
             <div className="product-page__row product-page__row-order">
               <div className="product-page__price">{product.price} ₸</div>
               <CountProduct
                 count={count}
                 setCount={setCount}
               />
-              <Button 
+              <Button
                 text="в корзину"
                 click={() => dispatch(addOrder({...product, count}))}
               >
                 <BasketIcon className="basket-icon"/>
               </Button>
+              <button className="product-page__item product-page__btn-share product-page__btn-share_mobile">
+                <Share />
+              </button>
             </div>
-            <div className="product-page__row">
-              <button className="product-page__item product-page__btn-share">
+            <div className="product-page__row product-page__row-info">
+              <button className="product-page__item product-page__btn-share product-page__btn-share_desktop">
                 <Share />
               </button>
               <div className="product-page__item product-page__text">При покупке от <b>10 000 ₸</b> бесплатная доставка по Кокчетаву и области</div>
