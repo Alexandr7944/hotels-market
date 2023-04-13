@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import { useAppDispatch } from '../hooks/hook';
-import { addOrder } from '../store/ordersProductSlice';
+import { addOrder, removeOrder } from '../store/ordersProductSlice';
 import { IProduct } from "../interfase/IProduct";
 import Button from "./button/Button";
 import { useNavigate } from 'react-router-dom';
-import { Basket } from './Icons/Icons';
 import ProductPacking from './productPacking/ProductPacking';
+import { Delete, Basket } from './Icons';
 
 type ProductItemProps = {
   product: IProduct
@@ -13,9 +14,17 @@ type ProductItemProps = {
 const ProductItem: React.FC<ProductItemProps> = ({product}) => {
   const dispatch = useAppDispatch(); 
   const router = useNavigate();
+  const [order, setOrder] = useState(false);
+
+  const changeOrder = () => {
+    order
+      ? dispatch(removeOrder(product.id))
+      : dispatch(addOrder({...product, count: 1}));
+    setOrder(prev => !prev);
+  }
 
   return (
-    <div className="product__item">
+    <div className="product__item" data-testid='product-item'>
       <img className="product__img" src={require(`../../public/img/${product.image}`)} alt="Продукт" />
       <ProductPacking packing={product.packing}/>
       <h3
@@ -31,12 +40,20 @@ const ProductItem: React.FC<ProductItemProps> = ({product}) => {
       </ul>
       <div className="product__order" >
         <div className="product__price">{product.price} ₸</div>
-        <Button
-          text="в корзину"
-          click={() => dispatch(addOrder({...product, count: 1}))}
-        >
-          <Basket className="basket-icon"/>
-        </Button>
+        {
+          order
+            ? <Button
+                className='product-delete-btn'
+                click={changeOrder}
+              ><Delete /></Button>
+            : <Button
+                data-testid='product-item-order'
+                text="в корзину"
+                click={changeOrder}
+              >
+                <Basket className="basket-icon"/>
+              </Button>
+        }
       </div>
     </div>
   )

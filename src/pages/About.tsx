@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className='about'>
+    <div className='about' data-testid="admin-page">
       <p className='about-text'>
         Это приложение было разработано в учебных целях, в нем реализовано:
       </p>

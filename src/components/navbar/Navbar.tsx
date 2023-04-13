@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import './navbar-style.sass';
 import Arrow from '../Icons/Arrow';
+import './navbar-style.sass';
 
 type LinkType = {
   title: string,

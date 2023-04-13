@@ -1,15 +1,11 @@
+import { ProductPackingProps } from "../../interfase/ProductPackingProps";
 import Bootle from "../Icons/Bootle";
 import BoxOpen from "../Icons/BoxOpen";
 import './product-packing.sass';
 
-type ProductPackingProps = {
-  className?: string,
-  packing: string
-}
-
 const ProductPacking: React.FC<ProductPackingProps> = ({ className, packing }) => {
   return (
-    <div className={className ? `product-packing ${className}` : "product-packing"}>
+    <div className={`product-packing ${className ? className : ''}`}>
       {packing.includes('л') ? <Bootle /> : <BoxOpen />}
       {packing}
     </div>

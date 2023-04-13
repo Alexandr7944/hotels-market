@@ -1,12 +1,9 @@
-import './admin-style.sass'
-import { useAppSelector } from "../../hooks/hook";
-import AdminSidebar from '../../components/adminSidebar/AdminSidebar';
+import './admin-style.sass';
 import { IProduct } from '../../interfase/IProduct';
+import { useAppSelector } from "../../hooks/hook";
 import { useState } from 'react';
-import AdminChangeItem from '../../components/adminChangeItem/AdminChangeItem';
-import AdminNewItem from '../../components/adminNewItem/AdminNewItem';
-import Navbar from '../../components/navbar/Navbar';
 import { removeStorage } from '../../store/updataStorage';
+import { Navbar, AdminSidebar, AdminNewItem, AdminChangeItem } from '../../components';
 
 const Admin = () => {
   const products: IProduct[] = useAppSelector(state => state.listOfProducts.list);
@@ -22,7 +19,7 @@ const Admin = () => {
   ]
 
   return (
-    <div className='admin'>
+    <div className='admin' data-testid="admin-page">
       <div className="container">
         <Navbar link={navArr} />
         <h2 className="admin__title">Администратор</h2>

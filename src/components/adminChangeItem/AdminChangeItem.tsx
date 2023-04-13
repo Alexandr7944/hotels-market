@@ -1,4 +1,5 @@
 import { IProduct } from "../../interfase/IProduct";
+import { SelectType } from "../../interfase/ICategoriesList";
 import { useState, useEffect } from 'react';
 import './adminChangeItem-style.sass'
 import { useAppDispatch } from "../../hooks/hook";
@@ -6,7 +7,6 @@ import { changeProduct, removeProduct } from "../../store/listOfProductsSlice";
 import { defaultProduct } from "../../data/defaultProduct";
 import Select, { MultiValue } from "react-select";
 import { category, subCategory } from "../../data/categoriesList";
-import { SelectType } from "../../interfase/ICategoriesList";
 
 type AdminChangeItemProps = {
   product: IProduct;
@@ -33,8 +33,6 @@ const AdminChangeItem: React.FC<AdminChangeItemProps> = ({ product }) => {
 
   const changeOptionsSubtype = (e: MultiValue<SelectType>) => {
     setItem({...item, subtype: e.map(item => item.value)})
-    console.log(item);
-    
   }
   
   const submit = (e: React.FormEvent) => {

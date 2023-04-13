@@ -1,12 +1,9 @@
 import { useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/hook';
-import BasketItem from '../../components/basketItem/BasketItem';
-import './basket-style.sass';
-import Button from '../../components/button/Button';
-import Modal from '../../components/modal/Modal';
-import { checkoutState } from '../../store/ordersProductSlice';
 import { useNavigate } from "react-router-dom";
-import Navbar from '../../components/navbar/Navbar';
+import './basket-style.sass';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
+import { checkoutState } from '../../store/ordersProductSlice';
+import { BasketItem, Button, Modal, Navbar } from '../../components';
 
 const Basket = () => {
   const orderProducts = useAppSelector(state => state.orderProducts.list);
@@ -32,7 +29,7 @@ const Basket = () => {
   }
 
   return (
-    <div className='basket-page'>
+    <div className='basket-page' data-testid="basket-page">
       <div className="container">
         <Navbar link={navArr} />
         <h2 className="basket-page__title">Корзина</h2>

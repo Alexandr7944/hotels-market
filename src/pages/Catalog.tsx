@@ -1,10 +1,5 @@
 import { useState } from "react";
-import Categories from "../components/categories/Categories";
-import ParameterMatching from "../components/parameterMatching/ParameterMatching";
-import ProductsList from "../components/ProductsList";
-import Sorted from "../components/sortedProducts/SortedProducts";
-import Navbar from "../components/navbar/Navbar";
-import SortedProducts from "../components/sortedProducts/SortedProducts";
+import { Categories, Navbar, ParameterMatching, ProductsList, SortedProducts } from "../components";
 
 const Catalog = () => {
   const [totalCount, setTotalCount] = useState(0)
@@ -14,7 +9,7 @@ const Catalog = () => {
   ]  
 
   return (
-    <main className="catalog-main">
+    <main className="catalog-main"  data-testid="catalog-page">
       <div className="container">
         <Navbar link={navArr} />
         <div className="catalog-main__title">
@@ -28,9 +23,6 @@ const Catalog = () => {
           <ProductsList totalCount={totalCount} setTotalCount={setTotalCount}/>
         </div>
       </div>
-      {
-        // window.scrolTop = 200
-      }
     </main>
   )
 }

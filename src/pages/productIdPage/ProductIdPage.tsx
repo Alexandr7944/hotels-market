@@ -1,14 +1,11 @@
 import './product-page-style.sass';
-import Button from '../../components/button/Button';
-import { BasketIcon, Download, Share } from '../../components/Icons/Icons';
-import { addOrder } from '../../store/ordersProductSlice';
+import { BasketIcon, Download, Share } from '../../components/Icons';
 import { useState } from 'react';
 import { useAppDispatch } from '../../hooks/hook';
 import useProductId from '../../hooks/useProductId';
 import useOrderId from '../../hooks/useOrderId';
-import CountProduct from '../../components/countProduct/CountProduct';
-import ProductPacking from '../../components/productPacking/ProductPacking';
-import Navbar from '../../components/navbar/Navbar';
+import { addOrder } from '../../store/ordersProductSlice';
+import { Navbar, ProductPacking, CountProduct, Button } from '../../components';
 
 const ProductIdPage: React.FC = () => {
   const product = useProductId();
@@ -37,10 +34,7 @@ const ProductIdPage: React.FC = () => {
             <ProductPacking className="product-page__packing" packing={product.packing} />
             <div className="product-page__row product-page__row-order">
               <div className="product-page__price">{product.price} ₸</div>
-              <CountProduct
-                count={count}
-                setCount={setCount}
-              />
+              <CountProduct count={count} setCount={setCount} />
               <Button
                 text="в корзину"
                 click={() => dispatch(addOrder({...product, count}))}

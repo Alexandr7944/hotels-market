@@ -1,28 +1,14 @@
 import './parameterMatching-style.sass';
-import { useAppDispatch, useAppSelector } from "../../hooks/hook"
-import { filterParameterList } from "../../store/listOfProductsSlice"
-import BrendSearch from "../BrendSearch"
-import FilterSubtype from "../filterSubtype/FilterSubtype"
-import PriceSearch from "../PriceSearch"
-import Button from "../button/Button"
-import categoriesList from "../../data/categoriesList"
-import Delete from "../Icons/Delete"
-import Arrow from "../Icons/Arrow"
+import { useAppDispatch, useAppSelector } from "../../hooks/hook";
+import { filterParameterList } from "../../store/listOfProductsSlice";
+import BrendSearch from "../BrendSearch";
+import FilterSubtype from "../filterSubtype/FilterSubtype";
+import PriceSearch from "../PriceSearch";
+import Button from "../button/Button";
+import categoriesList from "../../data/categoriesList";
+import {Arrow, Delete} from '../Icons';
 import { useState } from 'react';
-
-interface IFormElement {
-  from: HTMLInputElement,
-  to: HTMLInputElement,
-};
-
-export type BrendType = {
-  brend: string,
-  count: number,
-};
-
-type ParameterMatchingProps = {
-  setTotalCount: (a: number) => void,
-}
+import { BrendType, IFormElement, ParameterMatchingProps } from '../../interfase/parameterMatchingType';
 
 const ParameterMatching: React.FC<ParameterMatchingProps> = ({ setTotalCount }) => {
   const listProducts = useAppSelector(state => state.listOfProducts.list);
@@ -34,10 +20,7 @@ const ParameterMatching: React.FC<ParameterMatchingProps> = ({ setTotalCount }) 
     const brend = brends.find(el => el?.brend === product.brend);
     brend
       ? brend.count++
-      : brends.push({
-          brend: product.brend,
-          count: 1,
-        })
+      : brends.push({brend: product.brend, count: 1})
   })
 
   const handleEvent = (e: React.FormEvent) => {
@@ -59,7 +42,6 @@ const ParameterMatching: React.FC<ParameterMatchingProps> = ({ setTotalCount }) 
     handleEvent(e);
   }
 
-
   const reset = () => {
     dispatch(filterParameterList({from: 0, to: Infinity}));
     setTotalCount(0);
@@ -70,15 +52,12 @@ const ParameterMatching: React.FC<ParameterMatchingProps> = ({ setTotalCount }) 
       <form
         className="parameter-matching__form"
         onSubmit={submit}
-        // onChange={handleEvent}
         onReset={reset}
       >
         <div className="parameter-matching__title-flex">
           <h2 className="parameter-matching__title">Подбор по параметрам</h2>
           <button
-            className={mobileMenu
-              ? "parameter-matching__btn-menu parameter-matching__btn-menu_open"
-              : "parameter-matching__btn-menu"}
+            className={`parameter-matching__btn-menu ${mobileMenu ? 'parameter-matching__btn-menu_open' : ''}`}
             onClick={() => setMobileMenu(prev => prev = !prev)}
           >
             <Arrow />
@@ -99,7 +78,6 @@ const ParameterMatching: React.FC<ParameterMatchingProps> = ({ setTotalCount }) 
             </button>
           </div>
         </div>
-        
       </form>
       <div className="parameter-matching__mobile_hidden">
         {categoriesList.map((category) => <FilterSubtype key={category.type} category={category}/>)}

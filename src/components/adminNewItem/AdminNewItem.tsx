@@ -1,9 +1,9 @@
 import './adminNewItem-style.sass';
 import { IProduct } from "../../interfase/IProduct";
 import { useState } from 'react';
+import Select from 'react-select';
 import { useAppDispatch } from "../../hooks/hook";
 import { addProduct } from "../../store/listOfProductsSlice";
-import Select from 'react-select';
 import { category, subCategory } from '../../data/categoriesList';
 import { defaultProduct } from '../../data/defaultProduct';
 

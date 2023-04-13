@@ -1,7 +1,7 @@
 import './adminSidebar-style.sass';
 import { useState } from 'react';
 import { IProduct } from "../../interfase/IProduct"
-import AdminProductItem from "../adminProductItem/AdminProductItem"
+import AdminProductItem from '../adminProductItem/AdminProductItem';
 
 type AdminSidebarProps = {
   products: IProduct[],

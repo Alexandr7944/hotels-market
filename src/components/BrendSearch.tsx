@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import InputSearch from './input-search/InputSearch';
-import { BrendType } from './parameterMatching/ParameterMatching';
+import { BrendType } from '../interfase/parameterMatchingType';
 
 type BrendSearchProps = {
   brends: Array<BrendType | undefined>,
 };
-
 
 const BrendSearch: React.FC<BrendSearchProps> = ({ brends }) => {
   const [renderBrends, setRenderBrends] = useState(brends);

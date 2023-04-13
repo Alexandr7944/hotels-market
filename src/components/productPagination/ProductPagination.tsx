@@ -1,12 +1,5 @@
+import { ProductPaginationProps } from '../../interfase/ProductPaginationProps';
 import './productPagination-style.sass';
-
-type ProductPaginationProps = {
-  totalCount: number,
-  setTotalCount: (totalCount: number) => void,
-  numberOfPage: number,
-  numberOfCardsPerPage: number,
-  length: number
-};
 
 const ProductPagination: React.FC<ProductPaginationProps> = ({ totalCount, setTotalCount, numberOfPage, numberOfCardsPerPage, length }) => {
 
